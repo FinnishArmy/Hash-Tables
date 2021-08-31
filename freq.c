@@ -3,8 +3,17 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-// Main driver function.
+// Hash Table Function //
+// TODO: Create a hash table to store the frequency of word occurences.
 
+
+
+
+
+
+
+
+// Main driver function //
 // TODO: Make the main method take every word pairs.
 int main (int argc, char *argv[]) {
   FILE *fp;

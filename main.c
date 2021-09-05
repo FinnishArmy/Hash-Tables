@@ -22,6 +22,7 @@ int main(int argc, char *argv[]) {
       filename = argv[1];
       printf(" Filename: %s\n ", filename);
     }
+
     fp = fopen(filename, "r");
     /* Load data from txt file to the hash table */
     while(1) {
@@ -36,7 +37,7 @@ int main(int argc, char *argv[]) {
     }
     fclose(fp);
     /* Print words with frequency higher than 250 */
-    mostfrequent(hash, 250);
+    mostfrequent(hash, 1);
     freetable(hash);
     return 0;
 }

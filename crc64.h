@@ -1,3 +1,6 @@
+//** AUTHOR: Ben Mcamish **//
+// Washington State University - Vancouver **//
+
 #ifndef CRC64_H
 #define CRC64_H
 

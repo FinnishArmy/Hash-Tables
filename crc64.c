@@ -1,3 +1,9 @@
+//** AUTHOR: Ben Mcamish **//
+// Washington State University - Vancouver //
+
+// This function gets the hascode of the current location
+//    so we can grab the actual word of that location later on.
+
 #include "crc64.h"
 
 #define CRC64_REV_POLY      0x95AC9329AC4BC9B5ULL
@@ -7,7 +13,7 @@
 unsigned long long crc64(char* string) {
     static int initFlag = 0;
     static unsigned long long table[CRC64_TABLE_SIZE];
-    
+
     if (!initFlag) { initFlag++;
         for (int i = 0; i < CRC64_TABLE_SIZE; i++) {
             unsigned long long part = i;
@@ -19,7 +25,7 @@ unsigned long long crc64(char* string) {
             table[i] = part;
         }
     }
-    
+
     unsigned long long crc = CRC64_INITIALIZER;
     while (*string)
         crc = table[(crc ^ *string++) & 0xff] ^ (crc >> 8);

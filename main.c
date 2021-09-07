@@ -4,12 +4,17 @@
 #include <string.h>
 #include <ctype.h>
 
+// Main program runner.
 int main(int argc, char *argv[]) {
 
+    // Arguments for getting the appropriate file.
     FILE *fp;
     char *filename;
+    // Create the actual hashtable.
     hashtable *hash = createtable(1);
+    // Set the node to NULL.
     struct node *node = NULL;
+    // Max of 50 characters.
     char word[50];
 
     if (argc < 2) {

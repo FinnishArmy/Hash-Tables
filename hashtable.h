@@ -26,7 +26,7 @@ struct node *add(hashtable*, char*, int);
  // Function to print out the frequency of each word
  //   where it takes in the parameter of the just the hashtable.
  //   Uses a for loop to walk through the table.
-void mostfrequent(hashtable*);
+void frequencyCounter(hashtable*);
 
 
  // Function to initialize the hashtable and uses malloc to allocate

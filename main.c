@@ -46,5 +46,5 @@ int main(int argc, char *argv[]) {
     }
 
     fclose(fp);
-    mostfrequent(hash);
+    frequencyCounter(hash);
 }

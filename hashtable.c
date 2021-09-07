@@ -6,7 +6,7 @@
 #include "crc64.h"
 
 // Adds a node to the hashtable using the key.
-struct node *add(hashtable *word, char *key, int freq) {
+struct node *add(hashtable *word, char *key, int frequency) {
     // Create a new node.
     struct node *newnode;
     // Use the crc64 file to grab the hash-code.
@@ -28,14 +28,14 @@ struct node *add(hashtable *word, char *key, int freq) {
     }
    // After walking through with no duplicates, create a new node for the table.
    //   As well as, allocate memory for the node.
-    newnode = allocation(key, freq);
+    newnode = allocation(key, frequency);
     // Set the new node to the next word reading from the hashcode.
     newnode->next = word->table[hash];
     word->table[hash] = newnode;
 }
 
 // Prints out all of the word frequencies.
-void mostfrequent(hashtable *word) {
+void frequencyCounter(hashtable *word) {
     // Define a integer counter.
     int i;
     // Set the current location to NULL as we walk through printing the frequency.

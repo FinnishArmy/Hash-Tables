@@ -3,7 +3,7 @@
 #include <string.h>
 #include "hashtable.h"
 
-void freetable(hashtable *h) {
+void freeMemory(hashtable *h) {
     // Reset the nodes of the struct to NULL
     struct node *current = NULL;
     int i;

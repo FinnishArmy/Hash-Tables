@@ -1,5 +1,3 @@
-#ifndef HASHTABLE_H_INCLUDED
-#define HASHTABLE_H_INCLUDED
 #include <stdbool.h>
 
 /* Node to get stored in the hash table */
@@ -46,19 +44,12 @@ bool contains(hashtable *, char *);
 struct node * getnode(hashtable *, char *);
 
 /**
- * Deletes a node from the hash table
- * @param hashtable *, pointer to struct containing the hash table
- * @param char *, the key value to be deleted
- */
-void deletenode(hashtable *, char *);
-
-/**
  * Displays the elements from the table that have a higher frequency.
  * value than the integer value given as a parameter.
  * @param hashtable *, pointer to struct containing the hash table.
  * @param int, minimum frequency value.
  */
-void mostfrequent(hashtable *, int);
+void mostfrequent(hashtable *);
 
 /**
  * Initializes a new hash table. Allocates memory for an array.
@@ -74,7 +65,7 @@ hashtable * createtable(int);
  * @param char *, the key value to be stored in the node.
  * @return node *, pointer to the new node.
  */
-struct node * nalloc(char *, int);
+struct node * allocation(char *, int);
 
 /**
  * Deallocates the memory associated with the hash table, including
@@ -82,5 +73,3 @@ struct node * nalloc(char *, int);
  * @param hashtable *, pointer to the hashtable to be deallocated.
  */
 void freetable(hashtable *);
-
-#endif

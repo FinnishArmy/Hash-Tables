@@ -1,5 +1,4 @@
 #include "hashtable.h"
-#include "freeMem.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -43,5 +42,4 @@ int main(int argc, char *argv[]) {
 
     fclose(fp);
     mostfrequent(hash);
-    return 0;
 }

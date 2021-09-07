@@ -1,12 +1,13 @@
 #include <stdbool.h>
 
-/* Node to get stored in the hash table */
+// Create a node for the hashtable
 struct node {
     char *key;
     int frequency;
     struct node *next;
 };
 
+// Create the hashtable
 struct hashtable {
     struct node **table;
     int currentsize;
@@ -15,61 +16,20 @@ struct hashtable {
 
 typedef struct hashtable hashtable;
 
-/**
- * Adds a new node to the hash table.
- * @param hashtable *, pointer to struct containing the hash table.
- * @param char *, the key value to be stored.
- * @param int, the value to be stored.
- * @return the newly created node. If the key value is already
- * in the table, return the node containing that key.
- */
-struct node * add(hashtable *, char *, int);
+// Function to add a new node to the hashtable
+//    where it takes the parameters of the hashtable
+//    the key's value and the actual value that
+//    you want to store into the key. This then
+//    returns the new node.
+struct node *add(hashtable*, char*, int);
 
-/**
- * Checks is a key value is stored in the table.
- * @param hashtable *, pointer to struct containing the hash table.
- * @param char *, the key value to be searched for.
- * @return true if the key is in the table, false otherwise.
- */
-bool contains(hashtable *, char *);
+ // Function to print out the frequency of each word
+ //   where it takes in the parameter of the just the hashtable.
+ //   Uses a for loop to walk through the table.
+void mostfrequent(hashtable*);
 
-/**
- * Checks is a key value is stored in the table, returns the node if
- * it's found.
- * @param hashtable *, pointer to struct containing the hash table.
- * @param char *, the key value to be searched for.
- * @return the node containing the key value, NULL if the node is not
- * found.
- */
-struct node * getnode(hashtable *, char *);
 
-/**
- * Displays the elements from the table that have a higher frequency.
- * value than the integer value given as a parameter.
- * @param hashtable *, pointer to struct containing the hash table.
- * @param int, minimum frequency value.
- */
-void mostfrequent(hashtable *);
-
-/**
- * Initializes a new hash table. Allocates memory for an array.
- * of pointers. Size parameter determines initial size of the array
- * @param int, the size of the array to be created.
- * @param hashtable *, pointer to the new hashtable.
- */
-hashtable * createtable(int);
-
-/**
- * Allocates memory and sets the values for a new node.
- * @param int, the value to be stored in the node.
- * @param char *, the key value to be stored in the node.
- * @return node *, pointer to the new node.
- */
-struct node * allocation(char *, int);
-
-/**
- * Deallocates the memory associated with the hash table, including
- * all of the stored nodes.
- * @param hashtable *, pointer to the hashtable to be deallocated.
- */
-void freetable(hashtable *);
+ // Function to initialize the hashtable and uses malloc to allocate
+ //   memory for it. It uses the paramter int to determine the sizeof
+ //   the array.
+hashtable *createtable(int);

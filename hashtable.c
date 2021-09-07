@@ -8,11 +8,11 @@
 void freenode(struct node *);
 
 // Adds a node to the hashtable using the key.
-struct node *add(hashtable *h, char *key, int freq) {
+struct node *add(hashtable *word, char *key, int freq) {
     struct node *newnode;
     // Use the crc64 file to grab the hash-code.
-    int hash = crc64(key) % h->tablesize;
-    struct node *current = h->table[hash];
+    int hash = crc64(key) % word->tablesize;
+    struct node *current = word->table[hash];
 
     // Search for duplicates
     while(current != NULL) {
@@ -25,16 +25,16 @@ struct node *add(hashtable *h, char *key, int freq) {
     }
    // After walking through with no duplicates, create a new node for the table.
     newnode = allocation(key, freq);
-    newnode->next = h->table[hash];
-    h->table[hash] = newnode;
+    newnode->next = word->table[hash];
+    word->table[hash] = newnode;
 }
 
 // Prints out all of the word frequencies.
 void mostfrequent(hashtable *h) {
     int i;
     struct node *current = NULL;
-    for(i = 0; i < h->tablesize; i++) {
-        current = h->table[i];
+    for(i = 0; i < word->tablesize; i++) {
+        current = word->table[i];
         while(current != NULL) {
             if(current->frequency > 0) {
                 printf("        %d %s\n ", current->frequency+1, current->key);
